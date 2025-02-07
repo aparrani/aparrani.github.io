@@ -1,8 +1,14 @@
-# Alexander Parra
+---
+layout: default
+title: Bienvenido
+---
 
-Microeconometrista aplicado residiendo en Montevideo (Uruguay), cursando estudios en la Universidad de la República.
+<div class="center-content">
+  <h1>Alexander Parra</h1>
 
-**Temas de investigación:** Economía laboral, cambio climático, desigualdad, crimen, inclusión e innovación financiera.
+  <p>Microeconometrista aplicado residiendo en Montevideo (Uruguay), cursando estudios en la Universidad de la República.</p>
 
-Sin perjuicio de que mi trabajo ha sido junto a varios profesores e investigadores, también he desarrollado de forma independiente consultorías en proyectos de datos que pueden ser de ayuda para futuras investigaciones.
+  <p><strong>Temas de investigación:</strong> Economía laboral, cambio climático, desigualdad, crimen, inclusión e innovación financiera.</p>
 
+  <p>Sin perjuicio de que mi trabajo ha sido junto a varios profesores e investigadores, también he desarrollado de forma independiente consultorías en proyectos de datos que pueden ser de ayuda para futuras investigaciones.</p>
+</div>
