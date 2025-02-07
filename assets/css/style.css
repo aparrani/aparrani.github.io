@@ -1,15 +1,51 @@
-.update-message {
-    background-color: #ffdddd;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid red;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
-nav ul {
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-left .home-link {
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}
+
+.nav-right ul {
     list-style: none;
     display: flex;
     gap: 15px;
 }
-nav a {
+
+.nav-right ul li a {
     text-decoration: none;
+    color: black;
+}
+
+.hero {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.hero img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.hero h1 {
+    font-size: 24px;
     font-weight: bold;
+}
+
+.hero p {
+    font-size: 16px;
+    color: gray;
 }
