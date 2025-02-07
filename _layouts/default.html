@@ -9,26 +9,32 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/assets/CV_AP.pdf" target="_blank">CV</a></li>
-                <li><a href="/research/">Research</a></li>
-                <li><a href="/teaching/">Teaching</a></li>
-                <li><a href="/blog/">Blog</a></li>
-            </ul>
+            <div class="nav-left">
+                <a href="/" class="home-link">Alexander Parra</a>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="/research/">Research</a></li>
+                    <li><a href="/teaching/">Teaching</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/cv/">CV</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <div class="update-message">
-        🚧 **Estamos en proceso de actualización. Algunas secciones pueden estar incompletas.** 🚧
-    </div>
-
     <main>
+        <section class="hero">
+            <img src="/assets/images/profile.jpg" alt="Alexander Parra">
+            <h1>Alexander Parra</h1>
+            <p>Economist | Researcher | Data Enthusiast</p>
+        </section>
+
         {{ content }}
     </main>
 
     <footer>
-        <p>© 2024 Aparrani. Todos los derechos reservados.</p>
+        <p>© 2024 Alexander Parra - Powered by Jekyll</p>
     </footer>
 </body>
 </html>
