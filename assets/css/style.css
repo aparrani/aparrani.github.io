@@ -1,0 +1,15 @@
+.update-message {
+    background-color: #ffdddd;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid red;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+}
