@@ -1,3 +1,21 @@
-theme: minima
-title: Mi Sitio Web
-description: Bienvenido a mi sitio con Jekyll en GitHub Pages.
+title: "Alexander Parra"
+email: "alexparrani@gmail.com"
+description: "Economist | Researcher | Data Enthusiast"
+baseurl: ""
+url: "https://alexparrani.github.io"
+
+collections:
+  research:
+  teaching:
+  blog:
+
+nav:
+  - title: Research
+    url: "/research/"
+  - title: Teaching
+    url: "/teaching/"
+  - title: Blog
+    url: "/blog/"
+  - title: CV
+    url: "/cv/"
+
