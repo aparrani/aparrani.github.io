@@ -12,3 +12,4 @@ title: Bienvenido
 
   <p>Sin perjuicio de que mi trabajo ha sido junto a varios profesores e investigadores, también he desarrollado de forma independiente consultorías en proyectos de datos que pueden ser de ayuda para futuras investigaciones.</p>
 </div>
+
