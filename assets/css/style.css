@@ -1,79 +1,75 @@
+/* Oculta el título del repositorio */
+h1 {
+    display: none;
+}
+
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-nav {
+/* Ajustes para la barra de navegación */
+.navbar {
+    background-color: #8a2be2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho del viewport */
+    z-index: 9999; /* Barra al frente */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    justify-content: center; /* Centra la barra */
+    box-sizing: border-box;
 }
 
-.nav-left .home-link {
-    font-weight: bold;
-    color: red;
-    text-decoration: none;
-}
-
-.nav-right ul {
-    list-style: none;
+/* Asegura que la lista no tenga márgenes y se comporte de manera flexible */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap; /* Permite apilamiento en pantallas pequeñas */
+    justify-content: space-around; /* Distribuye los enlaces */
+    width: 100%; /* Hace que ocupe el ancho completo disponible */
+    max-width: 1200px; /* Controla el ancho máximo para pantallas grandes */
 }
 
-.nav-right ul li a {
+/* Estilos de los enlaces */
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
+    flex: 1; /* Los enlaces se distribuyen uniformemente */
+}
+
+/* Estilo al pasar el mouse sobre los enlaces */
+.navbar a:hover {
+    background-color: #ddd;
     color: black;
 }
 
-.hero {
-    text-align: center;
-    margin-top: 50px;
+/* Asegura que el contenido comience debajo de la barra */
+h2, p {
+    margin-top: 60px; /* Ajusta este valor si la barra es más alta */
 }
 
-.hero img {
-    width: 150px;
-    border-radius: 50%;
-}
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Apila los enlaces verticalmente */
+        align-items: center; /* Centra los enlaces apilados */
+    }
 
-.hero h1 {
-    font-size: 24px;
-    font-weight: bold;
-}
+    .navbar a {
+        text-align: left; /* Alinea el texto a la izquierda */
+        padding: 10px 20px; /* Ajusta el padding para pantallas pequeñas */
+    }
 
-.hero p {
-    font-size: 16px;
-    color: gray;
-}
-
-/* ✅ Nueva clase para centrar el contenido */
-.center-content {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* ✅ Estilos para los iconos de redes sociales */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.social-icons a {
-    text-decoration: none;
-    font-size: 24px;
-    color: black;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: red; /* Cambia el color al pasar el mouse */
+    h2, p {
+        margin-top: 80px; /* Asegura que no se pise el contenido al apilarse */
+    }
 }
 
