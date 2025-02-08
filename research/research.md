@@ -1,53 +1,15 @@
-**Fields of interest:** 
-
-Development economics • Economics of Education • Impact evaluations • Violence and conflict
-
-## Publications
-
-#### Book Chapters
-- With [Emiliana Vegas](https://www.emilianavegas.com/) and [Álvaro Hofflinger](https://alvarohofflinger.com/), "From Closure to Recovery: Tracing the Educational Impact of COVID-19 in Chile," in Harry Patrinos and Nuno Crato, eds., Improving National Education Systems After COVID-19, Springer: Washington, D.C., 2024. 
-
-[Ungated PDF](../files/pdfs/vegas_et_al_2024_chile.pdf){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="PDF"}
-
-#### Papers
-- With [Booyuel Kim](https://sites.google.com/site/booyuelkim/home) and [Hee-Seung Yang](https://sites.google.com/site/heeseungyang/), "Does the small business program benefit self-employed workers? Evidence from Nicaragua." *__Journal of Development Effectiveness__*, January 2024, 1–20. 
-
-[Digital Version](https://www.tandfonline.com/doi/full/10.1080/19439342.2023.2300138#:~:text=Using%20data%20from%20three%20rounds,%2Demployed%20workers'%20earnings%20overall.){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="PDF"}
-
-#### Working Papers
-- With [Booyuel Kim](https://sites.google.com/site/booyuelkim/home) and [Hee-Seung Yang](https://sites.google.com/site/heeseungyang/), "In utero exposure to civil conflict: Nicaraguan war and its long-term effects on socioeconomic outcomes." [Draft/slides available upon request]
-- With [Harry Patrinos](https://hpatrinos.com/), [Renata Lemos](https://renatalemos.com/), [Lelys Dinarte](https://sites.google.com/view/lelys-dinarte/home), and James Gresham, "Investing in Human Capital during Wartime: Experimental Evidence from Ukraine."
-
+---
+layout: page
+title: Research
+permalink: /research/
 ---
 
-### Pre-Doctoral Studies (before 2023)
+## Mis investigaciones  
 
-#### Books
-- With Mario Sánchez and Douglas Castro, 2015, "Ciudadanía y violencia. Una aproximación a sus múltiples expresiones." Managua: Centro de Análisis Socio Cultural.
+Aquí puedes listar tus proyectos con enlaces:  
 
-[PDF](http://biblioteca.clacso.edu.ar/Nicaragua/casc-uca/20150313124733/Ciudadania-y-violencia.pdf){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="PDF"}
+### 📌 Título del Proyecto 1  
+Descripción breve del proyecto. [Más info](enlace-al-proyecto)  
 
-#### Papers
-- With Hloreley Osorio, 2020, "Crítica y crisis en Nicaragua: la tensión entre democracia y capitalismo." *__Anuario de Estudios Centroamericanos__*, 46, 1-42. 
-
-[PDF](https://revistas.ucr.ac.cr/index.php/anuario/article/view/45081){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Github Repo"}
-
-- With Mario Sánchez, Douglas Castro & Jorge Guerra, 2016, "Movimientos sociales y acción colectiva en Nicaragua: Entre la identidad, autonomía y subordinación." *__Amnis__*, (15). 
-
-[Digital Version](https://amnis.revues.org/2813){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="PDF"}
-
-- With Carol Siero & Sebastián Hernández, 2015, "¿Ha sido importante la cooperación internacional para el desarrollo y el crecimiento económico? Una evidencia de datos panel para Nicaragua y Centroamérica." *__Encuentro__*, 102, 52-74. 
-
-[PDF](https://revistasnicaragua.cnu.edu.ni/index.php/encuentro/article/view/2817){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="PDF"}
-
-
-#### Reports
-- The World Bank. 2022. [Improving the well-being of adolescent girls in developing countries](https://documents1.worldbank.org/curated/en/099025312242111019/pdf/P1699940bcc13001a083820804f74e8151b.pdf)." Washington, D.C.: The World Bank.
-
----
-
-## Selected Works in Progress
-
-- With [Lelys Dinarte](https://sites.google.com/view/lelys-dinarte/home) and [Renata Lemos](https://renatalemos.com/) "Supporting Mental Health Through the Promotion of Psychosocial Support in Armenian Schools."
-- With Jostin Kitmang "The Role of Selective Public Universities in Shaping Long-Term Outcome."
-- With [Berk Özler](https://sites.google.com/site/decrgberkozler/home) and [Luca Parisotto](https://sites.google.com/view/lucaparisotto/home), "Shared decision-making: Does quality of care affect contraceptive use?"
+### 📌 Título del Proyecto 2  
+Descripción breve del proyecto. [Más info](enlace-al-proyecto)  
