@@ -13,9 +13,9 @@ title: Bienvenido
 
   <!-- Sección de Iconos de Redes Sociales -->
   <div class="social-icons">
-    <a href="mailto:tuemail@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    <a href="mailto:alexparrani@gmail.com"><i class="fas fa-envelope"></i> Email</a>
     <a href="https://scholar.google.com/citations?user=XXXX" target="_blank"><i class="ai ai-google-scholar"></i> Google Scholar</a>
-    <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    <a href="https://twitter.com/tuusuario" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+    <a href="https://github.com/aparrani" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://x.com/parra_idp" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
   </div>
 </div>
