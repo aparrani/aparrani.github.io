@@ -1,14 +1,44 @@
 ---
+pagetitle: "Alexander Parra | Home"
+title: "Alexander Parra"
+subtitle: "<center>Harvard University</center>"
+toc: false
 layout: default
-title: Bienvenido
+format:
+  html:
+    quarto-template-params:
+      banner-header-class: "home"
+
+about:
+  id: hero-heading
+  template: jolla
+  image-width: 15em
+  image-shape: round  
+  links:
+    - text: "{{< iconify bi envelope size=1.1em >}} Email"
+      href: "mailto:alexparrani@gmail.com"
+    - text: "{{< iconify bi academicons:google-scholar size=1.1em >}} GScholar"
+      href: https://scholar.google.com/citations?user=PA_LMYMAAAAJ&hl=en
+    - text: "{{< iconify ph butterfly-bold size=1.1em >}} Bluesky"
+      href: "https://bsky.app/profile/rrmaximiliano.bsky.social"
+    - text: "{{< iconify bi twitter size=1.1em >}} Twitter"
+      href: https://twitter.com/rrmaximiliano
+    - text: "{{< iconify bi github size=1.1em >}} Github"
+      href: https://github.com/aparrani
+    - text: "{{< iconify bi ant-design:twitch-outlined size=1.1em >}} Twitch"
+      href: https://www.twitch.tv/rrmaximiliano
 ---
 
-<div class="center-content">
-  
-  <p>Microeconometrista aplicado residiendo en Montevideo (Uruguay), cursando estudios en la Universidad de la República.</p>
+::: {#hero-heading}
+:::
 
-  <p><strong>Temas de investigación:</strong> Economía laboral, cambio climático, desigualdad, crimen, inclusión e innovación financiera.</p>
 
-  <p>Sin perjuicio de que mi trabajo ha sido junto a varios profesores e investigadores, también he desarrollado de forma independiente consultorías en proyectos de datos que pueden ser de ayuda para futuras investigaciones.</p>
+<div style="text-align: justify">
+
+Welcome! I am a ~~first~~ second year PhD student in Education Policy and Program Evaluation (Economics of Education Field Course) at Harvard University. Before joining the PhD program, I was working as a research assistant at [The World Bank, Development Research Group](https://www.worldbank.org/en/research/) where I was evaluating an [adaptive experiment in Cameroon](https://www.socialscienceregistry.org/trials/3514), an [RCT in Ukraine](https://www.socialscienceregistry.org/trials/10634), and building programming packages for impact evaluations.
+
+Overall, my research interests are development economics, education, impact evaluations, and conflict. Notwithstanding that my work has been alongside several professors and researchers, I have also independently developed a portfolio of data projects that can be of help for future research, and, especially, for Nicaragua that can be found in the [software](/projects/) tab of this website.
+
+Please feel free to contact me at the links provided on this website.
+
 </div>
-
