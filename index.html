@@ -1,1 +1,885 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexander Parra — Gestión de Riesgos & Asesoría</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#FFFFFF;
+  --beige:#F5F0E8;
+  --beige-mid:#EDE7D9;
+  --ink:#0D1B2A;
+  --ink-soft:#4A5568;
+  --navy:#0A2342;
+  --navy-mid:#1B3A5C;
+  --navy-light:#2E6DA4;
+  --gold:#B8943A;
+  --border:#D8D0C4;
+  --border-dark:#C5BFB5;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.6}
 
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 3rem;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;font-weight:300;
+  color:var(--navy);letter-spacing:0.08em;
+  text-transform:uppercase;text-decoration:none;
+}
+.nav-logo span{font-weight:600;font-style:italic}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{
+  background:var(--navy);color:white!important;
+  padding:0.5rem 1.2rem;border-radius:3px;
+  font-size:0.78rem!important;font-weight:500!important;
+  transition:background .2s!important;
+}
+.nav-cta:hover{background:var(--navy-mid)!important}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:8rem 3rem 5rem;
+  gap:5rem;
+  background:var(--white);
+  position:relative;overflow:hidden;
+}
+.hero-bg-text{
+  position:absolute;right:-2rem;top:50%;transform:translateY(-50%);
+  font-family:'Cormorant Garamond',serif;font-size:22vw;font-weight:300;
+  color:rgba(10,35,66,0.04);line-height:1;pointer-events:none;
+  letter-spacing:-0.04em;white-space:nowrap;
+}
+.hero-left{position:relative;z-index:1}
+.hero-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:0.72rem;color:var(--gold);
+  letter-spacing:0.14em;text-transform:uppercase;
+  margin-bottom:1.5rem;display:flex;align-items:center;gap:0.6rem;
+}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,5.5vw,5rem);
+  font-weight:300;line-height:1.05;
+  color:var(--navy);letter-spacing:-0.01em;
+  margin-bottom:0.3rem;
+}
+.hero-name-last{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,5.5vw,5rem);
+  font-weight:600;font-style:italic;
+  line-height:1.05;color:var(--navy);
+  letter-spacing:-0.01em;margin-bottom:1.5rem;
+  display:block;
+}
+.hero-divider{width:48px;height:1px;background:var(--gold);margin-bottom:1.5rem}
+.hero-sub{
+  font-size:1rem;color:var(--ink-soft);
+  max-width:460px;line-height:1.8;margin-bottom:2.5rem;font-weight:300;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--navy);color:white;
+  padding:0.8rem 1.8rem;border-radius:3px;
+  font-size:0.85rem;font-weight:500;text-decoration:none;
+  letter-spacing:0.04em;transition:background .2s,transform .15s;
+}
+.btn-primary:hover{background:var(--navy-mid);transform:translateY(-1px)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  border:1px solid var(--border-dark);color:var(--ink);
+  padding:0.8rem 1.6rem;border-radius:3px;
+  font-size:0.85rem;font-weight:500;text-decoration:none;
+  letter-spacing:0.04em;transition:border-color .2s,color .2s;
+}
+.btn-secondary:hover{border-color:var(--navy);color:var(--navy)}
+
+/* HERO FOTO */
+.hero-right{position:relative;z-index:1;display:flex;flex-direction:column;gap:1.5rem}
+.hero-photo-frame{
+  position:relative;
+  background:var(--beige);
+  border-radius:4px;overflow:hidden;
+  aspect-ratio:4/5;max-height:520px;
+}
+.hero-photo-frame img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  display:block;
+}
+.hero-photo-placeholder{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--beige) 0%,var(--beige-mid) 100%);
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;color:var(--navy-light);opacity:0.3;
+}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.hero-stat{
+  background:var(--white);padding:1rem 1.2rem;text-align:center;
+}
+.hero-stat-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;font-weight:600;color:var(--navy);
+  line-height:1;
+}
+.hero-stat-label{font-size:0.72rem;color:var(--ink-soft);margin-top:0.2rem;font-weight:400}
+
+/* SOCIAL STRIP */
+.social-strip{
+  display:flex;gap:1rem;align-items:center;
+  padding:1rem 3rem;
+  border-bottom:1px solid var(--border);
+  background:var(--beige);
+}
+.social-strip-label{font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin-right:0.5rem}
+.social-link{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  font-size:0.78rem;color:var(--ink-soft);text-decoration:none;
+  padding:0.3rem 0.7rem;border:1px solid var(--border-dark);
+  border-radius:3px;transition:all .2s;
+}
+.social-link:hover{border-color:var(--navy);color:var(--navy);background:white}
+.social-link i{font-size:0.8rem}
+
+/* ── SECTIONS ── */
+section{padding:5.5rem 3rem}
+.section-inner{max-width:1140px;margin:0 auto}
+.section-header{margin-bottom:3.5rem}
+.section-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:0.7rem;color:var(--gold);
+  letter-spacing:0.14em;text-transform:uppercase;
+  margin-bottom:0.75rem;display:flex;align-items:center;gap:0.6rem;
+}
+.section-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--gold)}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:300;color:var(--navy);
+  letter-spacing:-0.01em;line-height:1.15;margin-bottom:0.75rem;
+}
+.section-title em{font-style:italic;font-weight:600}
+.section-desc{font-size:0.95rem;color:var(--ink-soft);max-width:540px;line-height:1.8;font-weight:300}
+
+/* ── SERVICIOS ── */
+#servicios{background:var(--white)}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:4px;overflow:hidden;
+}
+.service-card{
+  background:var(--white);
+  padding:2.2rem 2rem;
+  transition:background .25s;
+  cursor:default;position:relative;
+}
+.service-card:hover{background:var(--navy);color:white}
+.service-img{
+  width:100%;height:160px;
+  object-fit:cover;border-radius:3px;
+  margin-bottom:1.4rem;
+  filter:grayscale(20%);
+  transition:filter .25s;
+}
+.service-card:hover .service-img{filter:grayscale(40%) brightness(0.7)}
+.service-icon-row{
+  display:flex;align-items:center;gap:0.6rem;
+  margin-bottom:0.8rem;
+}
+.service-tag{
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--gold);
+  transition:color .25s;
+}
+.service-card:hover .service-tag{color:rgba(184,148,58,0.8)}
+.service-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:600;
+  color:var(--navy);margin-bottom:0.6rem;
+  line-height:1.2;transition:color .25s;
+}
+.service-card:hover .service-title{color:white}
+.service-desc{
+  font-size:0.84rem;color:var(--ink-soft);
+  line-height:1.75;margin-bottom:1.2rem;
+  transition:color .25s;font-weight:300;
+}
+.service-card:hover .service-desc{color:rgba(255,255,255,0.75)}
+.service-pills{display:flex;flex-wrap:wrap;gap:0.35rem}
+.pill{
+  font-size:0.68rem;font-family:'DM Mono',monospace;
+  padding:0.2rem 0.55rem;
+  border:1px solid var(--border-dark);
+  border-radius:2px;color:var(--ink-soft);
+  transition:all .25s;
+}
+.service-card:hover .pill{border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.7)}
+
+/* TECH ICONS */
+.tech-strip{
+  display:flex;align-items:center;justify-content:center;
+  gap:2.5rem;flex-wrap:wrap;
+  padding:2.5rem 3rem;
+  background:var(--beige);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.tech-item{
+  display:flex;flex-direction:column;align-items:center;gap:0.4rem;
+  opacity:0.7;transition:opacity .2s;
+}
+.tech-item:hover{opacity:1}
+.tech-icon-img{width:36px;height:36px;object-fit:contain}
+.tech-label{font-size:0.68rem;font-family:'DM Mono',monospace;color:var(--ink-soft);letter-spacing:0.06em}
+
+/* ── SOBRE MÍ ── */
+#sobre-mi{background:var(--beige)}
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+.about-left{position:sticky;top:6rem}
+.about-photo{
+  width:100%;aspect-ratio:3/4;
+  object-fit:cover;object-position:top;
+  border-radius:3px;margin-bottom:1.5rem;
+  filter:grayscale(15%);
+}
+.about-photo-placeholder{
+  width:100%;aspect-ratio:3/4;
+  background:var(--beige-mid);border-radius:3px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;color:var(--navy-light);opacity:0.3;
+  margin-bottom:1.5rem;
+}
+.cert-list{display:flex;flex-direction:column;gap:0.6rem}
+.cert-item{
+  display:flex;align-items:flex-start;gap:0.7rem;
+  font-size:0.82rem;color:var(--ink-soft);line-height:1.5;
+}
+.cert-bullet{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;margin-top:0.45rem;
+}
+.about-text p{
+  font-size:0.97rem;color:var(--ink-soft);
+  line-height:1.85;margin-bottom:1.2rem;font-weight:300;
+}
+.about-text p strong{color:var(--navy);font-weight:500}
+.about-stats-row{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--border-dark);border:1px solid var(--border-dark);
+  border-radius:3px;overflow:hidden;margin-top:2rem;
+}
+.about-stat{background:var(--white);padding:1.2rem 1.4rem}
+.about-stat-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;font-weight:600;color:var(--navy);line-height:1;
+}
+.about-stat-desc{font-size:0.78rem;color:var(--ink-soft);margin-top:0.3rem;line-height:1.4}
+
+/* ── PUBLICACIONES ── */
+#publicaciones{background:var(--white)}
+.pub-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.pub-item{
+  display:grid;grid-template-columns:auto 1fr auto;
+  align-items:center;gap:2rem;
+  padding:1.5rem 2rem;
+  border-bottom:1px solid var(--border);
+  background:var(--white);transition:background .2s;
+}
+.pub-item:last-child{border-bottom:none}
+.pub-item:hover{background:var(--beige)}
+.pub-year{
+  font-family:'DM Mono',monospace;
+  font-size:0.75rem;color:var(--gold);
+  letter-spacing:0.08em;white-space:nowrap;
+}
+.pub-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-weight:400;color:var(--navy);
+  line-height:1.4;margin-bottom:0.25rem;
+}
+.pub-venue{font-size:0.78rem;color:var(--ink-soft);font-weight:300}
+.pub-status{
+  font-size:0.68rem;font-family:'DM Mono',monospace;
+  padding:0.2rem 0.6rem;border-radius:2px;
+  letter-spacing:0.06em;white-space:nowrap;
+}
+.pub-status.en-proceso{background:#FEF3C7;color:#92400E}
+.pub-status.proximamente{background:#EDE9FE;color:#4C1D95}
+.pub-coming{
+  text-align:center;padding:3rem 2rem;
+  color:var(--ink-soft);font-size:0.9rem;font-weight:300;
+}
+.pub-coming strong{
+  display:block;font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:400;color:var(--navy);margin-bottom:0.4rem;
+}
+
+/* ── METODOLOGÍA ── */
+#metodologia{background:var(--navy)}
+#metodologia .section-eyebrow{color:var(--gold)}
+#metodologia .section-title{color:white}
+#metodologia .section-desc{color:rgba(255,255,255,0.6)}
+.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.1);border-radius:4px;overflow:hidden}
+.method-step{background:rgba(255,255,255,0.04);padding:2rem 1.8rem}
+.method-num{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--gold);letter-spacing:0.1em;margin-bottom:1rem}
+.method-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:white;margin-bottom:0.6rem}
+.method-desc{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.7;font-weight:300}
+
+/* ── CONTACTO ── */
+#contacto{background:var(--beige)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-left h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;font-weight:300;color:var(--navy);
+  margin-bottom:1rem;line-height:1.2;
+}
+.contact-left p{font-size:0.9rem;color:var(--ink-soft);line-height:1.8;margin-bottom:2rem;font-weight:300}
+.contact-links{display:flex;flex-direction:column;gap:0.75rem}
+.contact-link{
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 1.2rem;
+  background:white;border:1px solid var(--border);
+  border-radius:3px;text-decoration:none;color:var(--ink);
+  transition:box-shadow .2s,border-color .2s;
+}
+.contact-link:hover{box-shadow:0 4px 20px rgba(10,35,66,0.08);border-color:var(--navy-light)}
+.contact-link-icon{
+  width:38px;height:38px;border-radius:3px;
+  background:var(--beige);display:flex;align-items:center;justify-content:center;
+  color:var(--navy);font-size:1rem;flex-shrink:0;
+}
+.contact-link-text{}
+.contact-link-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);font-weight:500}
+.contact-link-val{font-size:0.88rem;font-weight:500;color:var(--navy)}
+
+/* CALENDLY WIDGET */
+.calendly-box{
+  background:white;border:1px solid var(--border);
+  border-radius:4px;overflow:hidden;
+}
+.calendly-header{
+  background:var(--navy);
+  padding:1.5rem 2rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.calendly-avatar{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--beige);overflow:hidden;
+  border:2px solid rgba(255,255,255,0.3);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.calendly-avatar img{width:100%;height:100%;object-fit:cover}
+.calendly-avatar-placeholder{font-size:1.2rem;color:var(--navy-light)}
+.calendly-header-text{}
+.calendly-header-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white;font-weight:400}
+.calendly-header-sub{font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:0.1rem}
+.calendly-body{padding:1.5rem 2rem}
+.calendly-info{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;color:var(--ink-soft);margin-bottom:0.6rem}
+.calendly-info i{color:var(--navy-light);width:14px}
+.calendly-divider{height:1px;background:var(--border);margin:1rem 0}
+.calendly-label{font-size:0.75rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);margin-bottom:0.75rem}
+.calendly-duration{
+  display:inline-block;
+  padding:0.4rem 1rem;
+  border:2px solid var(--navy);
+  border-radius:3px;
+  font-size:0.82rem;font-weight:500;color:var(--navy);
+}
+.contact-form-section{margin-top:1.5rem}
+.form-label{font-size:0.78rem;font-weight:500;color:var(--ink);letter-spacing:0.03em;display:block;margin-bottom:0.4rem}
+.form-input,.form-textarea{
+  width:100%;padding:0.7rem 1rem;
+  border:1px solid var(--border-dark);
+  border-radius:3px;font-family:'DM Sans',sans-serif;
+  font-size:0.88rem;color:var(--ink);
+  background:white;outline:none;
+  transition:border-color .2s;margin-bottom:0.9rem;
+}
+.form-input:focus,.form-textarea:focus{border-color:var(--navy-light)}
+.form-textarea{resize:vertical;min-height:100px}
+.form-btn{
+  background:var(--navy);color:white;
+  border:none;padding:0.85rem 2rem;
+  border-radius:3px;font-family:'DM Sans',sans-serif;
+  font-size:0.88rem;font-weight:500;
+  cursor:pointer;transition:background .2s;width:100%;
+  letter-spacing:0.03em;
+}
+.form-btn:hover{background:var(--navy-mid)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);color:rgba(255,255,255,0.45);
+  padding:2rem 3rem;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+}
+footer a{color:rgba(255,255,255,0.45);text-decoration:none}
+footer a:hover{color:rgba(255,255,255,0.7)}
+.footer-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:300;
+  color:rgba(255,255,255,0.7);letter-spacing:0.08em;text-transform:uppercase;
+}
+.footer-logo span{font-weight:600;font-style:italic}
+.footer-text{font-size:0.78rem}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:6rem 1.5rem 3rem;gap:3rem}
+  .hero-bg-text{display:none}
+  .hero-right{order:-1}
+  .hero-photo-frame{max-height:320px}
+  section{padding:3.5rem 1.5rem}
+  .services-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:2rem}
+  .about-left{position:static}
+  .method-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+  .social-strip{padding:1rem 1.5rem}
+  footer{flex-direction:column;text-align:center;padding:1.5rem}
+}
+@media(max-width:480px){
+  .method-grid{grid-template-columns:1fr}
+  .pub-item{grid-template-columns:1fr;gap:0.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Alexander <span>Parra</span></a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#sobre-mi">Perfil</a></li>
+    <li><a href="#publicaciones">Publicaciones</a></li>
+    <li><a href="#metodologia">Metodología</a></li>
+    <li><a href="#contacto" class="nav-cta">Agendar reunión</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">RISK</div>
+
+  <div class="hero-left">
+    <p class="hero-eyebrow">Lima, Perú · Disponible remoto</p>
+    <h1 class="hero-name">Alexander</h1>
+    <span class="hero-name-last">Parra</span>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">
+      Economista y especialista en gestión integral de riesgos con más de 6 años en entidades reguladas por la SMV. Asesoría, talleres y capacitación para quienes necesitan tomar mejores decisiones bajo incertidumbre.
+    </p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary"><i class="fas fa-calendar-alt"></i> Agendar reunión</a>
+      <a href="assets/docs/CV_Alexander_Parra.pdf" target="_blank" class="btn-secondary"><i class="fas fa-file-pdf"></i> Ver CV</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <img src="assets/images/foto-perfil.jpg" alt="Alexander Parra"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="hero-photo-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val">6+</div>
+        <div class="hero-stat-label">años en GIR</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">80+</div>
+        <div class="hero-stat-label">capacitados</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">3</div>
+        <div class="hero-stat-label">entidades SMV</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL STRIP -->
+<div class="social-strip">
+  <span class="social-strip-label">Encuéntrame en</span>
+  <a href="https://www.linkedin.com/in/alexander-parra/" target="_blank" class="social-link">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  <a href="https://github.com/aparrani" target="_blank" class="social-link">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+  <a href="https://orcid.org/0000-0002-9693-5948" target="_blank" class="social-link">
+    <i class="fas fa-id-badge"></i> ORCID
+  </a>
+  <a href="https://api.whatsapp.com/send?phone=543516536883&text=Hola%20Alexander,%20me%20interesa%20conocer%20tus%20servicios" target="_blank" class="social-link">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+  <a href="assets/docs/CV_Alexander_Parra.pdf" target="_blank" class="social-link">
+    <i class="fas fa-file-pdf"></i> CV
+  </a>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Lo que ofrezco</p>
+      <h2 class="section-title">Servicios <em>especializados</em></h2>
+      <p class="section-desc">Cada servicio está diseñado para aportar valor concreto — no teoría genérica, sino marcos aplicables a tu contexto real.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Gestión de Riesgos">
+        <div class="service-icon-row"><span class="service-tag">GIR · ERM</span></div>
+        <h3 class="service-title">Gestión Integral de Riesgos</h3>
+        <p class="service-desc">Diseño e implementación de marcos de riesgo, matrices de riesgo inherente y residual, talleres RCSA y reportes para Directorio y regulador.</p>
+        <div class="service-pills">
+          <span class="pill">COSO ERM</span><span class="pill">ISO 31000</span><span class="pill">Basel III</span><span class="pill">VaR</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Compliance PLAFT">
+        <div class="service-icon-row"><span class="service-tag">PLAFT · AML</span></div>
+        <h3 class="service-title">Prevención de Lavado de Activos</h3>
+        <p class="service-desc">Matrices LA/FT, modelos de detección de operaciones inusuales, revisión de políticas de debida diligencia y preparación para auditorías UIF.</p>
+        <div class="service-pills">
+          <span class="pill">UIF</span><span class="pill">Due Diligence</span><span class="pill">ISO 37001</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80" alt="Talleres">
+        <div class="service-icon-row"><span class="service-tag">Training · Talleres</span></div>
+        <h3 class="service-title">Talleres y Capacitación</h3>
+        <p class="service-desc">Programas in-company en gestión de riesgos, ciberseguridad, continuidad de negocio y cumplimiento normativo. Diseñados a la medida de la organización.</p>
+        <div class="service-pills">
+          <span class="pill">In-company</span><span class="pill">RCSA</span><span class="pill">BCP</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&q=80" alt="Investigación Económica">
+        <div class="service-icon-row"><span class="service-tag">Research · Tesis</span></div>
+        <h3 class="service-title">Asesoría en Investigación Económica</h3>
+        <p class="service-desc">Diseño metodológico, econometría aplicada, datos de panel, DiD y apoyo en tesis de pregrado y posgrado en economía y finanzas.</p>
+        <div class="service-pills">
+          <span class="pill">R / Stata</span><span class="pill">Panel Data</span><span class="pill">DiD</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Bases de datos">
+        <div class="service-icon-row"><span class="service-tag">Data · Analytics</span></div>
+        <h3 class="service-title">Gestión de Bases de Datos</h3>
+        <p class="service-desc">Estructuración, limpieza y análisis de datos. Automatización de reportes, dashboards en Looker Studio y pipelines con Python.</p>
+        <div class="service-pills">
+          <span class="pill">Python</span><span class="pill">Looker Studio</span><span class="pill">Excel VBA</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="Inteligencia Artificial">
+        <div class="service-icon-row"><span class="service-tag">AI · Automatización</span></div>
+        <h3 class="service-title">Inteligencia Artificial Aplicada</h3>
+        <p class="service-desc">Introducción práctica al uso de IA para profesionales: prompting efectivo, automatización de tareas y casos de uso concretos en tu flujo de trabajo.</p>
+        <div class="service-pills">
+          <span class="pill">Gemini</span><span class="pill">Claude</span><span class="pill">Prompting</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TECH STRIP -->
+    <div class="tech-strip" style="margin-top:2rem;border-radius:4px">
+      <div class="tech-item">
+        <img class="tech-icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <span class="tech-label">Python</span>
+      </div>
+      <div class="tech-item">
+        <img class="tech-icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
+        <span class="tech-label">R / RStudio</span>
+      </div>
+      <div class="tech-item">
+        <img class="tech-icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+        <span class="tech-label">VS Code</span>
+      </div>
+      <div class="tech-item">
+        <img class="tech-icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+        <span class="tech-label">GitHub</span>
+      </div>
+      <div class="tech-item">
+        <img class="tech-icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud">
+        <span class="tech-label">Google Cloud</span>
+      </div>
+      <div class="tech-item" style="display:flex;flex-direction:column;align-items:center;gap:0.4rem">
+        <div style="width:36px;height:36px;background:#1A5276;border-radius:6px;display:flex;align-items:center;justify-content:center">
+          <span style="color:white;font-size:0.65rem;font-weight:700;font-family:'DM Mono',monospace">STATA</span>
+        </div>
+        <span class="tech-label">Stata</span>
+      </div>
+      <div class="tech-item">
+        <img class="tech-icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+        <span class="tech-label">JavaScript</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-left">
+        <img class="about-photo" src="assets/images/foto-perfil.jpg" alt="Alexander Parra"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="about-photo-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+        <div class="cert-list">
+          <div class="cert-item"><div class="cert-bullet"></div>Harvard Business School — Aspire Leaders Program, Cohorte 2026</div>
+          <div class="cert-item"><div class="cert-bullet"></div>Universidad del Pacífico — Control Interno, Gobierno y GIR</div>
+          <div class="cert-item"><div class="cert-bullet"></div>FRM Part I Candidate — GARP 2026</div>
+          <div class="cert-item"><div class="cert-bullet"></div>Credit Scoring con Python — IAB</div>
+          <div class="cert-item"><div class="cert-bullet"></div>Data Science Summer School — Hertie School</div>
+          <div class="cert-item"><div class="cert-bullet"></div>Oficial de Datos Personales — Estudio Muñiz</div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <p class="section-eyebrow" style="margin-bottom:0.75rem">Perfil</p>
+        <h2 class="section-title" style="margin-bottom:1.5rem">Experiencia que<br><em>respalda cada consejo</em></h2>
+        <p>Soy <strong>Paul Alexander Parra Ñiquen</strong>, economista por la Universidad Nacional Federico Villarreal y maestrando en Economía en la Universidad de la República (Uruguay, top 1 QS del país).</p>
+        <p>Mi trayectoria combina el rigor técnico de la investigación económica — fui <strong>Research Analyst del World Management Survey</strong>, iniciativa conjunta de LSE, Harvard, Stanford, Cornell y el Banco Mundial — con más de 6 años construyendo marcos de riesgo desde cero en tres entidades reguladas por la SMV: ACRES SAB, ACRES SAFI y ACRES Titulizadora.</p>
+        <p>Creo que la gestión de riesgos es, en esencia, la capacidad de <strong>tomar mejores decisiones bajo incertidumbre</strong>. Ofrezco estos servicios de manera independiente para compartir ese conocimiento con la misma seriedad técnica que aplico en mi rol formal.</p>
+        <p>Soy además coordinador de la <strong>Red Latinoamericana de Juventudes</strong> y colaboro con organizaciones de empleo joven en Perú, El Salvador y Guatemala.</p>
+
+        <div class="about-stats-row">
+          <div class="about-stat">
+            <div class="about-stat-val">6+</div>
+            <div class="about-stat-desc">años en GIR en entidades reguladas SMV</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">3</div>
+            <div class="about-stat-desc">entidades reguladas gestionadas simultáneamente</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">80+</div>
+            <div class="about-stat-desc">colaboradores capacitados en programas de riesgos</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-val">52k</div>
+            <div class="about-stat-desc">operaciones mensuales procesadas en modelos PLAFT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICACIONES -->
+<section id="publicaciones">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Investigación</p>
+      <h2 class="section-title">Publicaciones <em>y escritos</em></h2>
+      <p class="section-desc">Artículos académicos y notas de investigación en economía, riesgos financieros y mercados de capitales.</p>
+    </div>
+
+    <div class="pub-list">
+      <div class="pub-item">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Impacto del Fenómeno del Niño en el desempeño financiero de empresas agrícolas emisoras peruanas 2001–2025</div>
+          <div class="pub-venue">Tesis de licenciatura · Universidad Nacional Federico Villarreal · Diferencias en diferencias / TWFE</div>
+        </div>
+        <span class="pub-status en-proceso">En proceso</span>
+      </div>
+      <div class="pub-item">
+        <div class="pub-year">2026</div>
+        <div>
+          <div class="pub-title">Nota de investigación en gestión de riesgos y mercado de capitales peruano</div>
+          <div class="pub-venue">Por definir · Análisis empírico con datos SMV</div>
+        </div>
+        <span class="pub-status proximamente">Próximamente</span>
+      </div>
+    </div>
+
+    <div class="pub-coming" style="margin-top:1rem">
+      <strong>Más artículos en camino</strong>
+      Estoy trabajando en notas sobre GIR, finanzas sostenibles y econometría aplicada. Sígueme en <a href="https://www.linkedin.com/in/alexander-parra/" style="color:var(--navy-light)">LinkedIn</a> o <a href="https://orcid.org/0000-0002-9693-5948" style="color:var(--navy-light)">ORCID</a> para estar al tanto.
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGÍA -->
+<section id="metodologia">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Cómo trabajo</p>
+      <h2 class="section-title">De la <em>diagnosis</em> al resultado</h2>
+      <p class="section-desc">No entrego plantillas genéricas. Cada encargo empieza por entender tu contexto real.</p>
+    </div>
+    <div class="method-grid">
+      <div class="method-step">
+        <p class="method-num">01 — DIAGNÓSTICO</p>
+        <h3 class="method-title">Entender tu situación</h3>
+        <p class="method-desc">Conversación inicial sin costo para entender el contexto, objetivos y alcance real del encargo.</p>
+      </div>
+      <div class="method-step">
+        <p class="method-num">02 — DISEÑO</p>
+        <h3 class="method-title">Propuesta a medida</h3>
+        <p class="method-desc">Marco metodológico adaptado a tu organización, sector y nivel de madurez. Sin marcos de papel.</p>
+      </div>
+      <div class="method-step">
+        <p class="method-num">03 — EJECUCIÓN</p>
+        <h3 class="method-title">Implementación práctica</h3>
+        <p class="method-desc">Talleres, entregables y acompañamiento con criterio técnico. Comunico al nivel que necesites.</p>
+      </div>
+      <div class="method-step">
+        <p class="method-num">04 — TRANSFERENCIA</p>
+        <h3 class="method-title">Conocimiento que queda</h3>
+        <p class="method-desc">El objetivo es que no me necesites para siempre. Cada encargo termina con capacidades instaladas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Hablemos</p>
+      <h2 class="section-title">¿Tienes un <em>proyecto</em> en mente?</h2>
+      <p class="section-desc">La primera conversación no tiene costo. Si puedo ayudarte, te lo digo con honestidad.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- CALENDLY STYLE BOX -->
+      <div>
+        <div class="calendly-box">
+          <div class="calendly-header">
+            <div class="calendly-avatar">
+              <img src="assets/images/foto-perfil.jpg" alt="Alexander Parra"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="calendly-avatar-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="calendly-header-text">
+              <div class="calendly-header-title">Reunirse con Alexander Parra</div>
+              <div class="calendly-header-sub">Gestión de Riesgos & Asesoría</div>
+            </div>
+          </div>
+          <div class="calendly-body">
+            <div class="calendly-info"><i class="fas fa-video"></i> Google Meet / Zoom</div>
+            <div class="calendly-info"><i class="fas fa-map-marker-alt"></i> Lima, Perú · Disponible remoto</div>
+            <div class="calendly-divider"></div>
+            <div class="calendly-label">Duración de la reunión</div>
+            <div class="calendly-duration">30 minutos</div>
+            <div class="calendly-divider"></div>
+            <div class="calendly-label">Canales directos</div>
+            <div class="contact-links" style="gap:0.5rem">
+              <a href="https://api.whatsapp.com/send?phone=543516536883&text=Hola%20Alexander,%20me%20interesa%20conocer%20tus%20servicios" target="_blank" class="contact-link">
+                <div class="contact-link-icon" style="background:#E8F5E9;color:#2E7D32"><i class="fab fa-whatsapp"></i></div>
+                <div class="contact-link-text">
+                  <div class="contact-link-label">WhatsApp</div>
+                  <div class="contact-link-val">+54 9 3516 53-6883</div>
+                </div>
+              </a>
+              <a href="tel:+51945766363" class="contact-link">
+                <div class="contact-link-icon"><i class="fas fa-phone"></i></div>
+                <div class="contact-link-text">
+                  <div class="contact-link-label">Teléfono Lima</div>
+                  <div class="contact-link-val">+51 945 766 363</div>
+                </div>
+              </a>
+              <a href="mailto:alexparrani@gmail.com" class="contact-link">
+                <div class="contact-link-icon" style="background:#FEF3E2;color:#E65100"><i class="fas fa-envelope"></i></div>
+                <div class="contact-link-text">
+                  <div class="contact-link-label">Email</div>
+                  <div class="contact-link-val">alexparrani@gmail.com</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULARIO -->
+      <div>
+        <div class="contact-form-section">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--navy);margin-bottom:0.5rem">O escríbeme directamente</h3>
+          <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:1.5rem;font-weight:300">Te respondo en menos de 24 horas.</p>
+          <label class="form-label">Nombre completo</label>
+          <input type="text" class="form-input" placeholder="Tu nombre" id="f-nombre">
+          <label class="form-label">Correo electrónico</label>
+          <input type="email" class="form-input" placeholder="tu@correo.com" id="f-email">
+          <label class="form-label">Servicio de interés</label>
+          <input type="text" class="form-input" placeholder="ej. Taller de riesgos, asesoría tesis..." id="f-servicio">
+          <label class="form-label">Cuéntame de tu proyecto</label>
+          <textarea class="form-textarea" placeholder="Describe brevemente qué necesitas y cuál es tu contexto..." id="f-mensaje"></textarea>
+          <button class="form-btn" onclick="enviarWhatsApp()">
+            <i class="fab fa-whatsapp" style="margin-right:0.4rem"></i> Enviar por WhatsApp
+          </button>
+          <p style="font-size:0.72rem;color:var(--ink-soft);margin-top:0.6rem;text-align:center">
+            También puedes escribir a <a href="mailto:alexparrani@gmail.com" style="color:var(--navy-light)">alexparrani@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Alexander <span>Parra</span></a>
+  <div class="footer-text">
+    <a href="https://www.linkedin.com/in/alexander-parra/" target="_blank" style="margin-right:1.2rem"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/aparrani" target="_blank" style="margin-right:1.2rem"><i class="fab fa-github"></i></a>
+    <a href="https://orcid.org/0000-0002-9693-5948" target="_blank"><i class="fas fa-id-badge"></i></a>
+  </div>
+  <p class="footer-text">© 2026 Alexander Parra · Lima, Perú</p>
+</footer>
+
+<script>
+function enviarWhatsApp(){
+  const nombre = document.getElementById('f-nombre').value.trim();
+  const email  = document.getElementById('f-email').value.trim();
+  const serv   = document.getElementById('f-servicio').value.trim();
+  const msg    = document.getElementById('f-mensaje').value.trim();
+  if(!nombre||!msg){alert('Por favor completa al menos tu nombre y mensaje.');return;}
+  const texto = `Hola Alexander, te escribo desde tu web.\n\n*Nombre:* ${nombre}\n*Email:* ${email||'No indicado'}\n*Servicio:* ${serv||'No indicado'}\n*Mensaje:* ${msg}`;
+  window.open('https://api.whatsapp.com/send?phone=543516536883&text='+encodeURIComponent(texto),'_blank');
+}
+</script>
+
+</body>
+</html>
