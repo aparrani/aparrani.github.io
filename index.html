@@ -17,7 +17,7 @@
   --navy:#0A2342;
   --navy-mid:#1B3A5C;
   --navy-light:#2E6DA4;
-  --gold:#B8943A;
+  --gold:#4A7FB5;
   --border:#D8D0C4;
   --border-dark:#C5BFB5;
 }
@@ -257,7 +257,7 @@ section{padding:5.5rem 3rem}
 .tech-label{font-size:0.68rem;font-family:'DM Mono',monospace;color:var(--ink-soft);letter-spacing:0.06em}
 
 /* ── SOBRE MÍ ── */
-#sobre-mi{background:var(--beige)}
+#sobre-mi{background:var(--white)}
 .about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
 .about-left{position:sticky;top:6rem}
 .about-photo{
@@ -470,6 +470,122 @@ footer a:hover{color:rgba(255,255,255,0.7)}
   .method-grid{grid-template-columns:1fr}
   .pub-item{grid-template-columns:1fr;gap:0.5rem}
 }
+
+/* ── CERTIFICADOS ── */
+#certificados{background:var(--beige)}
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.cert-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:8px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:box-shadow .25s,transform .2s;
+  text-decoration:none;
+  display:block;
+}
+.cert-card:hover{
+  box-shadow:0 12px 40px rgba(10,35,66,0.13);
+  transform:translateY(-3px);
+}
+.cert-thumb{
+  width:100%;height:180px;
+  overflow:hidden;background:var(--beige-mid);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.cert-thumb img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .3s;
+}
+.cert-card:hover .cert-thumb img{transform:scale(1.04)}
+.cert-thumb-placeholder{
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  color:var(--navy-light);opacity:0.5;
+}
+.cert-thumb-placeholder i{font-size:2.5rem}
+.cert-thumb-placeholder span{font-size:0.7rem;font-family:'DM Mono',monospace;letter-spacing:0.08em}
+.cert-overlay{
+  position:absolute;inset:0;
+  background:rgba(10,35,66,0.6);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .25s;
+}
+.cert-card:hover .cert-overlay{opacity:1}
+.cert-overlay-icon{color:white;font-size:1.5rem}
+.cert-body{padding:1.2rem 1.3rem}
+.cert-issuer{
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;color:var(--gold);
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:0.4rem;
+}
+.cert-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-weight:600;color:var(--navy);
+  line-height:1.3;
+}
+
+/* ── PROYECTOS ── */
+#proyectos{background:var(--white)}
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.proj-card{
+  border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;
+  background:white;
+  transition:box-shadow .25s,transform .2s;
+}
+.proj-card:hover{box-shadow:0 10px 35px rgba(10,35,66,0.1);transform:translateY(-2px)}
+.proj-header{
+  height:140px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.proj-header-icon{font-size:2.8rem;opacity:0.15;position:absolute}
+.proj-header-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.12em;
+  text-transform:uppercase;
+  position:relative;z-index:1;
+  padding:0.3rem 0.8rem;border-radius:2px;
+}
+.proj-body{padding:1.3rem}
+.proj-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:600;color:var(--navy);
+  margin-bottom:0.5rem;line-height:1.3;
+}
+.proj-desc{font-size:0.82rem;color:var(--ink-soft);line-height:1.7;margin-bottom:1rem;font-weight:300}
+.proj-tools{display:flex;flex-wrap:wrap;gap:0.3rem}
+.proj-tool{
+  font-size:0.67rem;font-family:'DM Mono',monospace;
+  padding:0.18rem 0.5rem;
+  border:1px solid var(--border-dark);
+  border-radius:2px;color:var(--ink-soft);
+}
+.proj-coming-badge{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  font-size:0.68rem;font-family:'DM Mono',monospace;
+  padding:0.2rem 0.6rem;border-radius:2px;
+  background:#EEF2FF;color:#3730A3;letter-spacing:0.06em;
+  margin-bottom:0.75rem;
+}
+@media(max-width:900px){
+  .cert-grid{grid-template-columns:repeat(2,1fr)}
+  .proj-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .cert-grid{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -480,7 +596,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#sobre-mi">Perfil</a></li>
-    <li><a href="#publicaciones">Publicaciones</a></li>
+    <li><a href="#certificados">Certificados</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#publicaciones">Publicaciones</a></li>
     <li><a href="#metodologia">Metodología</a></li>
     <li><a href="#contacto" class="nav-cta">Agendar reunión</a></li>
   </ul>
@@ -506,8 +622,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
 
   <div class="hero-right">
     <div class="hero-photo-frame">
-      <img src="assets/images/foto-perfil.jpg" alt="Alexander Parra"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="assets/images/foto-perfil.jpg" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=AP&background=0A2342&color=fff&size=400&bold=true'" alt="Alexander Parra" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
       <div class="hero-photo-placeholder" style="display:none"><i class="fas fa-user"></i></div>
     </div>
     <div class="hero-stats">
@@ -661,8 +776,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-left">
-        <img class="about-photo" src="assets/images/foto-perfil.jpg" alt="Alexander Parra"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="assets/images/foto-perfil.jpg" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=AP&background=0A2342&color=fff&size=400&bold=true'" alt="Alexander Parra" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
         <div class="about-photo-placeholder" style="display:none"><i class="fas fa-user"></i></div>
         <div class="cert-list">
           <div class="cert-item"><div class="cert-bullet"></div>Harvard Business School — Aspire Leaders Program, Cohorte 2026</div>
@@ -740,6 +854,193 @@ footer a:hover{color:rgba(255,255,255,0.7)}
   </div>
 </section>
 
+
+<!-- CERTIFICADOS -->
+<section id="certificados">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Formación</p>
+      <h2 class="section-title">Certificaciones <em>y logros</em></h2>
+      <p class="section-desc">Haz clic en cada certificado para verlo o descargarlo.</p>
+    </div>
+    <div class="cert-grid">
+
+      <a class="cert-card" href="assets/docs/certificaciones/harvard_aspire.pdf" target="_blank">
+        <div class="cert-thumb">
+          <img src="assets/docs/certificaciones/harvard_aspire.pdf#page=1"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="">
+          <div class="cert-thumb-placeholder" style="display:none">
+            <i class="fas fa-file-pdf"></i><span>Harvard</span>
+          </div>
+          <div class="cert-overlay"><i class="fas fa-external-link-alt cert-overlay-icon"></i></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Harvard Business School</div>
+          <div class="cert-name">Aspire Leaders Program · Cohorte 2026</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="assets/docs/certificaciones/pacifico_gir.pdf" target="_blank">
+        <div class="cert-thumb">
+          <div class="cert-thumb-placeholder">
+            <i class="fas fa-shield-alt"></i><span>U. Pacífico</span>
+          </div>
+          <div class="cert-overlay"><i class="fas fa-external-link-alt cert-overlay-icon"></i></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Universidad del Pacífico</div>
+          <div class="cert-name">Control Interno, Gobierno y Gestión Integral de Riesgos</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="assets/docs/certificaciones/credit_scoring.pdf" target="_blank">
+        <div class="cert-thumb">
+          <div class="cert-thumb-placeholder">
+            <i class="fas fa-chart-line"></i><span>Credit Scoring</span>
+          </div>
+          <div class="cert-overlay"><i class="fas fa-external-link-alt cert-overlay-icon"></i></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Instituto de Analítica y Negocios</div>
+          <div class="cert-name">Credit Scoring con Python</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="assets/docs/certificaciones/gemini_santander.pdf" target="_blank">
+        <div class="cert-thumb">
+          <div class="cert-thumb-placeholder">
+            <i class="fas fa-robot"></i><span>Gemini AI</span>
+          </div>
+          <div class="cert-overlay"><i class="fas fa-external-link-alt cert-overlay-icon"></i></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Google · Santander</div>
+          <div class="cert-name">Inteligencia Artificial con Gemini</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="#" target="_blank">
+        <div class="cert-thumb">
+          <div class="cert-thumb-placeholder">
+            <i class="fas fa-database"></i><span>Hertie School</span>
+          </div>
+          <div class="cert-overlay"><i class="fas fa-external-link-alt cert-overlay-icon"></i></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Hertie School Data Science Lab</div>
+          <div class="cert-name">Data Science Summer School</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="#" target="_blank">
+        <div class="cert-thumb">
+          <div class="cert-thumb-placeholder">
+            <i class="fas fa-lock"></i><span>Est. Muñiz</span>
+          </div>
+          <div class="cert-overlay"><i class="fas fa-external-link-alt cert-overlay-icon"></i></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Estudio Muñiz</div>
+          <div class="cert-name">Taller para Oficiales de Datos Personales</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-eyebrow">Portafolio</p>
+      <h2 class="section-title">Proyectos de <em>datos</em></h2>
+      <p class="section-desc">Modelos, dashboards y análisis construidos con Python, R y herramientas de visualización. Próximamente disponibles para descarga.</p>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-header" style="background:#EEF2FF">
+          <i class="fas fa-chart-bar proj-header-icon" style="color:#3730A3"></i>
+          <span class="proj-header-label" style="background:#E0E7FF;color:#3730A3">Credit Scoring</span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-coming-badge"><i class="fas fa-clock"></i> Próximamente</span>
+          <div class="proj-title">Modelo de Credit Scoring con WOE</div>
+          <p class="proj-desc">Regresión logística con Weight of Evidence aplicada a dataset de Kaggle. Alcanzó el 1er lugar en el ranking del curso.</p>
+          <div class="proj-tools"><span class="proj-tool">Python</span><span class="proj-tool">Logit</span><span class="proj-tool">WOE</span><span class="proj-tool">Quarto</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header" style="background:#F0FDF4">
+          <i class="fas fa-exclamation-triangle proj-header-icon" style="color:#166534"></i>
+          <span class="proj-header-label" style="background:#DCFCE7;color:#166534">ERM · Riesgos</span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-coming-badge"><i class="fas fa-clock"></i> Próximamente</span>
+          <div class="proj-title">Dashboard de Gestión Integral de Riesgos</div>
+          <p class="proj-desc">Sistema SIGIR-ACRES: prototipo web con matrices de riesgo, heat maps animados y seguimiento de planes de acción.</p>
+          <div class="proj-tools"><span class="proj-tool">JavaScript</span><span class="proj-tool">HTML/CSS</span><span class="proj-tool">Google Apps Script</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header" style="background:#FFF7ED">
+          <i class="fas fa-dollar-sign proj-header-icon" style="color:#9A3412"></i>
+          <span class="proj-header-label" style="background:#FFEDD5;color:#9A3412">Riesgo Financiero</span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-coming-badge"><i class="fas fa-clock"></i> Próximamente</span>
+          <div class="proj-title">Modelo de Impacto Ransomware</div>
+          <p class="proj-desc">Modelo financiero para cuantificar el impacto de ciberataques: interrupción de negocio, respuesta a incidentes y escenarios de estrés.</p>
+          <div class="proj-tools"><span class="proj-tool">Excel</span><span class="proj-tool">VBA</span><span class="proj-tool">Stress Testing</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header" style="background:#F0F9FF">
+          <i class="fas fa-leaf proj-header-icon" style="color:#0369A1"></i>
+          <span class="proj-header-label" style="background:#E0F2FE;color:#0369A1">Econometría</span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-coming-badge"><i class="fas fa-clock"></i> Próximamente</span>
+          <div class="proj-title">Impacto del Fenómeno del Niño en empresas agrícolas</div>
+          <p class="proj-desc">Diferencias en diferencias con efectos fijos (TWFE) usando datos financieros SMV 2001–2025.</p>
+          <div class="proj-tools"><span class="proj-tool">R</span><span class="proj-tool">DiD / TWFE</span><span class="proj-tool">bookdown</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header" style="background:#FDF4FF">
+          <i class="fas fa-search proj-header-icon" style="color:#7E22CE"></i>
+          <span class="proj-header-label" style="background:#F3E8FF;color:#7E22CE">PLAFT · ML</span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-coming-badge"><i class="fas fa-clock"></i> Próximamente</span>
+          <div class="proj-title">Detección de Operaciones Inusuales con ML</div>
+          <p class="proj-desc">Clustering e Isolation Forest para detección de operaciones sospechosas sobre base transaccional de ~52k registros mensuales.</p>
+          <div class="proj-tools"><span class="proj-tool">Python</span><span class="proj-tool">Sklearn</span><span class="proj-tool">Isolation Forest</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header" style="background:#F8FAFC">
+          <i class="fas fa-calculator proj-header-icon" style="color:#475569"></i>
+          <span class="proj-header-label" style="background:#E2E8F0;color:#475569">VaR · Mercado</span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-coming-badge"><i class="fas fa-clock"></i> Próximamente</span>
+          <div class="proj-title">Automatización VaR — Posición USD SMV</div>
+          <p class="proj-desc">Pipeline Python que descarga PDFs de posición neta en USD desde el portal SMV y calcula VaR paramétrico e histórico para el Comité de Riesgos.</p>
+          <div class="proj-tools"><span class="proj-tool">Python</span><span class="proj-tool">Selenium</span><span class="proj-tool">VaR</span><span class="proj-tool">Colab</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- METODOLOGÍA -->
 <section id="metodologia">
   <div class="section-inner">
@@ -789,8 +1090,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
         <div class="calendly-box">
           <div class="calendly-header">
             <div class="calendly-avatar">
-              <img src="assets/images/foto-perfil.jpg" alt="Alexander Parra"
-                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="assets/images/foto-perfil.jpg" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=AP&background=0A2342&color=fff&size=400&bold=true'" alt="Alexander Parra" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
               <div class="calendly-avatar-placeholder" style="display:none"><i class="fas fa-user"></i></div>
             </div>
             <div class="calendly-header-text">
