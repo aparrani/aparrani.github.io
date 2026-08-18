@@ -145,20 +145,27 @@ nav{
 
 /* SOCIAL STRIP */
 .social-strip{
-  display:flex;gap:1rem;align-items:center;
-  padding:1rem 3rem;
+  display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap;
+  padding:0.9rem 3rem;
   border-bottom:1px solid var(--border);
   background:var(--beige);
 }
-.social-strip-label{font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin-right:0.5rem}
+.social-strip-label{font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;flex-shrink:0}
+.social-links-row{display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center}
 .social-link{
-  display:inline-flex;align-items:center;gap:0.4rem;
-  font-size:0.78rem;color:var(--ink-soft);text-decoration:none;
-  padding:0.3rem 0.7rem;border:1px solid var(--border-dark);
-  border-radius:3px;transition:all .2s;
+  display:inline-flex;align-items:center;gap:0.35rem;
+  font-size:0.75rem;color:var(--ink-soft);text-decoration:none;
+  padding:0.28rem 0.65rem;border:1px solid var(--border-dark);
+  border-radius:3px;transition:all .2s;white-space:nowrap;
 }
 .social-link:hover{border-color:var(--navy);color:var(--navy);background:white}
-.social-link i{font-size:0.8rem}
+.social-link i{font-size:0.78rem}
+@media(max-width:600px){
+  .social-strip{padding:0.9rem 1.25rem;gap:0.5rem}
+  .social-strip-label{width:100%;margin-bottom:0.1rem}
+  .social-links-row{gap:0.4rem}
+  .social-link{font-size:0.72rem;padding:0.25rem 0.55rem}
+}
 
 /* ── SECTIONS ── */
 section{padding:5.5rem 3rem}
@@ -453,18 +460,45 @@ footer a:hover{color:rgba(255,255,255,0.7)}
 @media(max-width:900px){
   nav{padding:1rem 1.5rem}
   .nav-links{display:none}
-  .hero{grid-template-columns:1fr;padding:6rem 1.5rem 3rem;gap:3rem}
+  .hero{
+    grid-template-columns:1fr;
+    padding:5.5rem 1.25rem 3rem;
+    gap:2rem;
+  }
   .hero-bg-text{display:none}
-  .hero-right{order:-1}
-  .hero-photo-frame{max-height:320px}
-  section{padding:3.5rem 1.5rem}
+  .hero-right{order:1}
+  .hero-left{order:0}
+  .hero-photo-frame{
+    max-height:260px;
+    aspect-ratio:3/2;
+  }
+  .hero-photo-frame img{object-position:top center}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
+  .hero-name{font-size:2.6rem}
+  .hero-name-last{font-size:2.6rem}
+  section{padding:3rem 1.25rem}
   .services-grid{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr;gap:2rem}
   .about-left{position:static}
+  .about-photo{aspect-ratio:3/2;max-height:240px}
   .method-grid{grid-template-columns:1fr 1fr}
-  .contact-grid{grid-template-columns:1fr;gap:3rem}
-  .social-strip{padding:1rem 1.5rem}
-  footer{flex-direction:column;text-align:center;padding:1.5rem}
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .social-strip{padding:0.75rem 1.25rem;gap:0.5rem;flex-wrap:wrap}
+  .social-strip-label{width:100%;margin-bottom:0.2rem}
+  .cert-grid{grid-template-columns:repeat(2,1fr)}
+  .proj-grid{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .btn-primary,.btn-secondary{width:100%;justify-content:center}
+  footer{flex-direction:column;text-align:center;padding:1.5rem;gap:0.75rem}
+  .about-stats-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .method-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}
+  .hero-stats{gap:0}
+  .pub-item{grid-template-columns:1fr;gap:0.4rem}
+  nav{padding:0.85rem 1rem}
+  .nav-logo{font-size:1.1rem}
 }
 @media(max-width:480px){
   .method-grid{grid-template-columns:1fr}
@@ -645,21 +679,23 @@ footer a:hover{color:rgba(255,255,255,0.7)}
 <!-- SOCIAL STRIP -->
 <div class="social-strip">
   <span class="social-strip-label">Encuéntrame en</span>
-  <a href="https://www.linkedin.com/in/alexander-parra/" target="_blank" class="social-link">
-    <i class="fab fa-linkedin"></i> LinkedIn
-  </a>
-  <a href="https://github.com/aparrani" target="_blank" class="social-link">
-    <i class="fab fa-github"></i> GitHub
-  </a>
-  <a href="https://orcid.org/0000-0002-9693-5948" target="_blank" class="social-link">
-    <i class="fas fa-id-badge"></i> ORCID
-  </a>
-  <a href="https://api.whatsapp.com/send?phone=543516536883&text=Hola%20Alexander,%20me%20interesa%20conocer%20tus%20servicios" target="_blank" class="social-link">
-    <i class="fab fa-whatsapp"></i> WhatsApp
-  </a>
-  <a href="assets/docs/CV_Alexander_Parra.pdf" target="_blank" class="social-link">
-    <i class="fas fa-file-pdf"></i> CV
-  </a>
+  <div class="social-links-row">
+    <a href="https://www.linkedin.com/in/alexander-parra/" target="_blank" class="social-link">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/aparrani" target="_blank" class="social-link">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://orcid.org/0000-0002-9693-5948" target="_blank" class="social-link">
+      <i class="fas fa-id-badge"></i> ORCID
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=543516536883&text=Hola%20Alexander,%20me%20interesa%20conocer%20tus%20servicios" target="_blank" class="social-link">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="assets/docs/CV_Alexander_Parra.pdf" target="_blank" class="social-link">
+      <i class="fas fa-file-pdf"></i> CV
+    </a>
+  </div>
 </div>
 
 <!-- SERVICIOS -->
@@ -687,7 +723,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
         <img class="service-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Compliance PLAFT">
         <div class="service-icon-row"><span class="service-tag">PLAFT · AML</span></div>
         <h3 class="service-title">Prevención de Lavado de Activos</h3>
-        <p class="service-desc">Matrices LA/FT, modelos de detección de operaciones inusuales, señales de alertas automáticas, revisión de políticas de debida diligencia y preparación para auditorías UIF.</p>
+        <p class="service-desc">Matrices LA/FT, modelos de detección de operaciones inusuales, revisión de políticas de debida diligencia y preparación para auditorías UIF.</p>
         <div class="service-pills">
           <span class="pill">UIF</span><span class="pill">Due Diligence</span><span class="pill">ISO 37001</span>
         </div>
